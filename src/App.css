@@ -1,55 +1,200 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+/*#####~~ENTIRE APP~~#####*/
+.app {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.add-item {
-
+a {
+  text-decoration: none !important;
 }
-.add-item-icon {
+input{
 
-}
-
-.header {
+  /* width: 325px;
+  height: 26px; */
+  background: transparent;
+  border: none;
+  padding: 16px;
+  margin-bottom: 30px;
   display:flex;
-  padding:2em;
-  line-height:15x;
-
-}
-
-.list {
-  background-color:#61dafb;
-  border: black;
-}
-
-.item {
-  color:rgb(149, 35, 35)
-}
-
-.profile-pic {
-
-}
-
-
-
-.primaryModal {
-  appearance: button;
-  text-rendering: auto;
-  color: -internal-light-dark(black, white);
-  letter-spacing: normal;
-  word-spacing: normal;
-
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: center;
   align-items: flex-start;
-  cursor: default;
-  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
-  box-sizing: border-box;
-  margin: 0em;
-  font: 400 13.3333px Arial;
-  padding: 1px 6px;
-  border-width: 2px;
-  border-style: outset;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  justify-content:center;
+  padding: 16px;
+  margin: auto;
+
+}
+/*#####~HEADER~~#####*/
+.header-container {
+  display: flex;
+  align-items: center;
+}
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  padding-top:32px;
+  padding-bottom: 24px;
+  }
+/*#####~HEADER - ICONS~~#####*/
+.profile-pic {
+  padding-left:40px;
+  padding-right: 16px;
+}
+
+.new-list-icon {
+  margin-left:auto;
+  margin-right: 40px;
+}
+
+/*#####~~BODY~~#####*/
+.body {
+  /* display: flex;
+  justify-content: flex-start;
+  max-height: 100%;
+  max-width: 100%; */
+}
+
+/*#####~~LISTS~~#####*/
+.lists-container {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex-wrap: wrap;
+}
+
+/*#####~~CARDS~~#####*/
+.card-container {
+  display: flex;
+  border: 0.75px solid #ECECEC;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 16px;
+  margin: 16px;
+  height: 60px;
+  width: auto;
+}
+.card-container:hover {
+  background-color: #F4F4F4;
+}
+.card-container:active{
+  background-color:#ECECEC;
+}
+.card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  margin: auto;
+  width: 100%;
+}
+.card {
+  display: flex;
+  padding-left:16px;
+}
+
+
+
+/*#####~~MODAL~~#####*/
+.modal-container {
+  display:flex;
+  justify-content: center;
+  padding: 16px;
+  margin: 16px;
+  height: 60px;
+  width: auto;
+
+  border: 0.75px solid #ECECEC;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #ccc;
+  transition: 300ms ease-out;
+}
+.modal-btn-wrapper {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 16px;
+  height: 40px;
+  width: 100%;
+  z-index:1000;
+}
+.cancel {
+  color:black;
+  font-weight:600;
+}
+.done {
+  color:black;
+  font-weight:600;
+  padding-left: 16px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  padding-top:32px;
+  padding-bottom: 24px;
+  }
+/*#####~HEADER - ICONS~~#####*/
+.profile-pic {
+  padding-left:40px;
+  padding-right: 16px;
+}
+
+
+/* #####LIST ENTRY##### */
+.dropdown {
+  /* display: flex;
+  flex-direction: column; */
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-45%);
+  /* min-width: 150px; */
+  border: 1px solid #ECECEC;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+
+/* #####ICONS##### */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  transition: filter 300ms;
+
+}
+
+.icon:hover {
+  background-color: #57b846;
+
+}
+.icon:active {
+  background-color: #bb2840;
+}
+
+
+button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 1039 ) {
+
+}
+@media only screen and (min-width: 1040px) and (max-width: 1727 ) {
+}
+@media only screen and (max-width: 500 ) {
 }

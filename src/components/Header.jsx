@@ -1,23 +1,31 @@
-import React from 'react';
-import profile from '../profile.svg';
-import Button from 'react-bootstrap/Button';
-import CreateListEntryModal from './CreateListEntryModal.jsx';
+import React, { useState } from 'react';
+import ProfilePicIcon from '../icons/ProfilePicIcon.jsx';
+import NewListIcon from '../icons/NewListIcon.jsx';
+import AddListModal from './AddListModal.jsx';
+
 
 const Header = ({addList}) => {
+  const [open, setOpen] = useState(false);
+
   return (
+    <div className ="header-wrapper">
+    <div className="profile-pic">
+     <ProfilePicIcon/>
+     </div>
 
-    <div className="header">
-      <img src={profile} className="profile-pic" alt="profile"/>
-
-      <h1> Lists</h1>
-
-      <CreateListEntryModal addList={addList}/>
+     <h1 className="title"> Lists</h1>
 
 
+     <div  className="new-list-icon">
+       <a href="#" onClick={() => setOpen(!open)}>
+       <NewListIcon/>
+      </a>
+
+     </div>
+
+     {open && <AddListModal addList={addList}/>}
     </div>
   )
-
-
 }
 
 export default Header;
