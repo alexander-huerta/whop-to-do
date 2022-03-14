@@ -1,64 +1,37 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal'
+import ExpandIcon from '../icons/ExpandIcon.jsx';
+import DeleteIcon from '../icons/DeleteIcon.jsx';
+import EditIcon from '../icons/EditIcon.jsx';
+import Dropdown from 'react-bootstrap/Dropdown'
 
 const ListEntry = ({item, removeList}) => {
+  const [open, setOpen] = useState(false);;
 
-  const [show, setShow] = useState(false);
-  const closeModal = () => setShow(false);
-
-  const openModal = () => setShow(true);
   return (
-  <>
-  <Button variant="primary" onClick={openModal}>
-  {item} ---
-  </Button>
+    <div className = "card-container">
+      <div className = "card-wrapper">
+      <div className="card">
+        {item}
+      </div>
 
-  <Modal show={show} onHide={closeModal} animation={true} dialogClassName={"primaryModal"}>
-
-      <Button variant="secondary" onClick={closeModal}>
-        Edit
-      </Button>
-
-
-      <Button
-        variant="primary"
-        onClick={(e) => {
-        removeList(item)
-        closeModal()
-        }}
-        onKeyPress={(e) => {
-        removeList(item)
-        closeModal()
-        }}
-        >
-         Delete
-      </Button>
-  </Modal>
-</>
-
+      <div className="expand-icon">
+        <a href="#" onClick={() => setOpen(!open)}>
+          <ExpandIcon/>
+        </a>
+      </div>
+      {open && 'y0'}
+      </div>
+    </div>
   )
 }
-
-
-
-// import React from 'react';
-// const ListEntry = ({item, removeList}) => (
-
-//   <div className="item">
-//     <button
-//       className="add-item"
-//       type="submit"
-//       value={item}
-//       onClick={(e) => removeList(e.target.value)}
-//       >
-//         {item}
-//     </button>
-//   </div>
-// )
 
 export default ListEntry;
 
 
 
 
+{/* <EditIcon closeDropdown={closeDropdown}/>
+<DeleteIcon
+  removeList={removeList}
+  item={item}
+  /> */}
