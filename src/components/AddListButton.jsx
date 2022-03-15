@@ -4,6 +4,7 @@ import AddListModal from './AddListModal.jsx'
 
 const AddListButton = ({addList}) => {
   const [open, setOpen] = useState(false);;
+  const [color, setColor] = useState('#242424')
 
   if(!open) {
     return (
@@ -13,9 +14,16 @@ const AddListButton = ({addList}) => {
             Create a list
           </div>
         <div className="icon">
-          <a href="#" onClick={() => setOpen(!open)}>
-          <AddIcon/>
-          </a>
+
+          <AddIcon
+            fill={color}
+            onClick={() => {
+              setOpen(!open)
+              setColor('#2FE6FF')
+               }}
+            onMouseLeave={() => {
+              setColor('#242424')}}/>
+
         </div>
         </div>
       </div>

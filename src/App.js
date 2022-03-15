@@ -8,19 +8,20 @@ import AddListButton from './components/AddListButton.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lists: ['exercises', 'supermarket'],
-    };
     // this.state = {
-    //   lists: [],
+    //   lists: ['exercises', 'supermarket'],
     // };
+    this.state = {
+      lists: [],
+    };
     this.addList = this.addList.bind(this);
     this.removeList = this.removeList.bind(this);
     this.editList = this.editList.bind(this);
   }
 
   addList(listToAdd) {
-    this.setState({ lists: [...this.state.lists, listToAdd] })
+    if(listToAdd !== '')
+      this.setState({ lists: [...this.state.lists, listToAdd] })
   }
   removeList(listToDelete) {
     this.setState({lists: this.state.lists.filter((list) => list !== listToDelete)});

@@ -7,23 +7,23 @@ import AddListModal from './AddListModal.jsx';
 const Header = ({addList}) => {
   const [open, setOpen] = useState(false);
 
+
   return (
     <div className ="header-wrapper">
-    <div className="profile-pic">
-     <ProfilePicIcon/>
-     </div>
+      <div className="profile-pic">
+      <ProfilePicIcon />
+      </div>
 
-     <h1 className="title"> Lists</h1>
+      <h1 className="title"> Lists</h1>
+        <div className="new-list-icon">
+          <NewListIcon
+            onClick={() => {
+              setOpen(!open)
+            }}
+            />
+        </div>
 
-
-     <div  className="new-list-icon">
-       <a href="#" onClick={() => setOpen(!open)}>
-       <NewListIcon/>
-      </a>
-
-     </div>
-
-     {open && <AddListModal addList={addList}/>}
+      {open && <AddListModal addList={addList}/>}
     </div>
   )
 }

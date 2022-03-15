@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import CancelIcon from '../icons/CancelIcon.jsx';
 
-const AddListModal = ({addList}) => {
+const AddListModal = ({addList, item}) => {
   const [open, setOpen] = useState(true);;
   const [string, setString] = useState('');
+  const [color, setColor] = useState('#505050')
+
+  const colorSet = (c, bool=true) => {
+    setOpen(bool)
+    setColor(c)
+  }
 
   return (
     <>
@@ -14,28 +20,39 @@ const AddListModal = ({addList}) => {
         size="lg"
         animation={true}
         className="modal-container"
-      >
-        <Modal.Header>
-          <div className="modal-btn-wrapper">
-            <button
-              className="cancel"
-              onClick={() => setOpen(false)}
-            >
-              <CancelIcon/> Cancel
-            </button>
+        backdrop="static"
 
-            <button
+      >
+          <div className="modal-btn-wrapper">
+            <div className="cancel">
+              <CancelIcon
+                colorSet={colorSet}
+                fill={color}
+                color={color}
+                onClick={() => {
+                  setOpen(false)
+                  setColor('#2FE6FF')
+                }}
+                onMouseLeave={() => setColor('#505050')}
+                onMouseOver={() => setColor('#242424')}
+              />
+            </div>
+
+            <div
               className="done"
+              style={{color:color}}
               onClick={() => {
+                setColor('#2FE6FF', false)
                 addList(string)
                 setOpen(false)
-                }}
+              }}
+              onMouseOver={() => {setColor('#242424')
+              }}
             >
               Done
-            </button>
+            </div>
 
           </div>
-        </Modal.Header>
           <input
             type="text"
             placeHolder="List title"
@@ -47,6 +64,7 @@ const AddListModal = ({addList}) => {
 }
 
 export default AddListModal;
+
 
 
 
