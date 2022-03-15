@@ -1,70 +1,69 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import CancelIcon from '../icons/CancelIcon.jsx';
+import DoneIcon from '../icons/DoneIcon.jsx';
+
 
 const AddListModal = ({addList, item}) => {
   const [open, setOpen] = useState(true);;
   const [string, setString] = useState('');
-  const [color, setColor] = useState('#505050')
-
-  const colorSet = (c, bool=true) => {
-    setOpen(bool)
-    setColor(c)
-  }
+  const [color, setCancelColor] = useState('#505050')
+  const [color2, setDoneColor] = useState('#505050')
 
   return (
-    <>
+    <div class="modal-dialog modal-fullscreen-sm-down">
       <Modal
         show={open}
         onHide={()=>setOpen(false)}
         size="lg"
-        animation={true}
-        className="modal-container"
         backdrop="static"
-
+        animation={true}
+        className="add-list-modal-container"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
       >
-          <div className="modal-btn-wrapper">
+
+          <div className="modal-buttons">
             <div className="cancel">
               <CancelIcon
-                colorSet={colorSet}
                 fill={color}
-                color={color}
                 onClick={() => {
+                  setCancelColor('#2FE6FF')
                   setOpen(false)
-                  setColor('#2FE6FF')
                 }}
-                onMouseLeave={() => setColor('#505050')}
-                onMouseOver={() => setColor('#242424')}
+                onMouseLeave={() => setCancelColor('#505050')}
+                onMouseOver={() => setCancelColor('#242424')}
               />
             </div>
 
-            <div
-              className="done"
-              style={{color:color}}
-              onClick={() => {
-                setColor('#2FE6FF', false)
-                addList(string)
-                setOpen(false)
-              }}
-              onMouseOver={() => {setColor('#242424')
-              }}
-            >
-              Done
+            <div className="done">
+              <DoneIcon
+                fill={color2}
+                onClick={() => {
+                  setDoneColor('#2FE6FF')
+                  addList(string)
+                  setOpen(false)
+                }}
+                onMouseLeave={() => setDoneColor('#505050')}
+                onMouseOver={() => setDoneColor('#242424')}
+              />
             </div>
-
           </div>
+
           <input
-            type="text"
-            placeHolder="List title"
+          className="modal-input"
+            type={"text"}
+            placeholder="List item"
+            value={item}
             onChange={(e) => setString(e.target.value)}
         />
+
       </Modal>
-    </>
+    </div>
   );
 }
 
 export default AddListModal;
-
 
 
 

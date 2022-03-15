@@ -8,23 +8,20 @@ const AddListButton = ({addList}) => {
 
   if(!open) {
     return (
-      <div className = "card-container">
-        <div className = "card-wrapper">
-          <div className="card">
-            Create a list
-          </div>
-        <div className="icon">
-
-          <AddIcon
-            fill={color}
-            onClick={() => {
-              setOpen(!open)
-              setColor('#2FE6FF')
-               }}
-            onMouseLeave={() => {
-              setColor('#242424')}}/>
-
+      <div className = "list">
+        <div className="list-name">
+          Create a list
         </div>
+
+        <div className="icon">
+        <AddIcon
+          fill={color}
+          onClick={() => {
+            setOpen(!open)
+            setColor('#2FE6FF')
+              }}
+          onMouseLeave={() => {
+            setColor('#242424')}}/>
         </div>
       </div>
     );

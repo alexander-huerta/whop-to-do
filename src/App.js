@@ -8,12 +8,12 @@ import AddListButton from './components/AddListButton.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   lists: ['exercises', 'supermarket'],
-    // };
     this.state = {
-      lists: [],
+      lists: ['exercises', 'supermarket'],
     };
+    // this.state = {
+    //   lists: [],
+    // };
     this.addList = this.addList.bind(this);
     this.removeList = this.removeList.bind(this);
     this.editList = this.editList.bind(this);
@@ -37,14 +37,15 @@ class App extends React.Component {
 
     return (
       <div className="app">
+
         <div className="header-container ">
           <Header addList={this.addList}/>
         </div>
-        <div className="body">
+
           <div className="lists-container">
             {hasList}
           </div>
-        </div>
+
       </div>
     )
   }

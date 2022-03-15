@@ -4,23 +4,25 @@ import DeleteIcon from '../icons/DeleteIcon.jsx';
 import EditIcon from '../icons/EditIcon.jsx';
 import Dropdown from 'react-bootstrap/Dropdown'
 
-const ListEntry = ({item, removeList}) => {
+const ListEntry = ({item,removeList}) => {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState('#242424')
-    console.log(item)
+
+
   return (
 
-    <div className = "card-container">
-      <div className = "card-wrapper">
-        <div className="card">
+    <div className = "list-container">
+      <div className = "list">
+        <div className="list-name">
           {item}
         </div>
 
       <div className="expand-icon">
         <ExpandIcon
           fill={color}
-          onClick={() => {
+          onClick={(e) => {
             setOpen(!open)
+            console.log(item)
           }}
           onMouseLeave={() => {
             setColor('#242424')}}
@@ -29,8 +31,10 @@ const ListEntry = ({item, removeList}) => {
 
         />
       </div>
-        {open && 'y0'}
+        {open && <Dropdown/>}
       </div>
+
+
     </div>
   )
 }

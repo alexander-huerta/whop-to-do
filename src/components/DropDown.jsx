@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
+import EditIcon from '../icons/EditIcon.jsx';
+
 
 const DropDown = () => {
 	const [open, setOpen] = useState(false);;
 
 	return (
-		<div className="dropdown">
-			<div className="expand-icon">
-				<a href="#" onClick={() => setOpen(!open)}>
-					<EditIcon/>
-				</a>
-			</div>
 
-		</div>
+
+			<EditIcon
+			  animation={true}
+				show={true}
+			  onClick={() => setOpen(!open)}/>
+
+
+
+
+
+
+
+
+
 			)
-}
+		}
+
 
 export default DropDown;

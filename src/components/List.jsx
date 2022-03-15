@@ -3,7 +3,7 @@ import ListEntry from './ListEntry.jsx';
 
 const List = ({list, removeList}) => {
   return (
-    <div className="listsWrapper">
+    <div classNAme="list-container">
       {list.map((item) => (
         <ListEntry
           item={item}

@@ -15,62 +15,39 @@
 a {
   text-decoration: none !important;
 }
-input{
 
-  background: transparent;
-  border: none;
-  padding: 16px;
-  margin-bottom: 30px;
-  display:flex;
-  align-items: flex-start;
-  justify-content:center;
-  padding: 16px;
-  margin: auto;
 
-}
 /*#####~HEADER~~#####*/
-.header-container {
+/* .header-container {
   display: flex;
   align-items: center;
-}
-.header-wrapper {
+} */
+.header{
   display: flex;
-  align-items: center;
+  align-items:center;
   height: 40px;
   width: 100%;
-  padding-top:32px;
-  padding-bottom: 24px;
+  padding: 32px 0 24px 0;
   }
-/*#####~HEADER - ICONS~~#####*/
 .profile-pic {
-  padding-left:40px;
-  padding-right: 16px;
-  /* border-radius:50%; */
+  padding: 0 16px 0 40px;
 }
-
 .new-list-icon {
   margin-left:auto;
   margin-right: 40px;
 }
+/* .title {
+  font-weight: 700;
+  font-size: 32px;
+} */
 
-/*#####~~BODY~~#####*/
-.body {
-  /* display: flex;
-  justify-content: flex-start;
-  max-height: 100%;
-  max-width: 100%; */
-}
+
 
 /*#####~~LISTS~~#####*/
 .lists-container {
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  flex-wrap: wrap;
+  margin: 0 10px 0 10px;
 }
-
-/*#####~~CARDS~~#####*/
-.card-container {
+.list-container {
   display: flex;
   border: 0.75px solid #ECECEC;
   border-radius: 8px;
@@ -80,72 +57,59 @@ input{
   height: 60px;
   width: auto;
 }
-
-.card-wrapper {
+.list {
   display: flex;
   justify-content: space-between;
   padding: 16px;
   margin: auto;
   width: 100%;
 }
-.card {
+.list-name {
   display: flex;
   padding-left:16px;
 }
 
 
 
-/*#####~~MODAL~~#####*/
-.modal-container {
-  border: 0.75px solid #ECECEC;
+
+/*#####~~NEW LIST MODAL~~#####*/
+.add-list-modal-container {
+  border: 0.75px solid #d11a1a;
   border-radius: 8px;
   box-shadow: 0 2px 5px #ccc;
   transition: 300ms ease-out;
   padding: 16px;
-  margin: auto;
-  width: 50%;
-
+  margin: 16px;
 }
-
-.modal-btn-wrapper {
+.modal-buttons {
   display:flex;
-  justify-content:space-around;
-  align-items:flex-start;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:600;
+  padding: 16px;
+  margin: 16px;
+}
+.modal-input{
+  border: none;
+  padding: 16px;
+  font-size: 28px;
+
+
 
 }
 .cancel {
-  color:black;
-  font-weight:600;
 }
 .done {
-  color:black;
-  font-weight:600;
+
 }
 
-.header-wrapper {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  padding-top:32px;
-  padding-bottom: 24px;
-  }
-/*#####~HEADER - ICONS~~#####*/
-.profile-pic {
-  padding-left:40px;
-  padding-right: 16px;
-}
+
 
 
 /* #####LIST ENTRY##### */
 .dropdown {
-  /* display: flex;
-  flex-direction: column; */
-  position: absolute;
-  top: 58px;
   width: 300px;
   transform: translateX(-45%);
-  /* min-width: 150px; */
   border: 1px solid #ECECEC;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -153,26 +117,12 @@ input{
 }
 
 /* #####ICONS##### */
-.icon {
+/* .icon {
   display: flex;
   justify-content: center;
   align-items:flex-end;
   transition: filter 300ms;
 
-}
+} */
 
-button {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  background: transparent;
-  border: none;
-}
 
-@media only screen and (min-width: 360px) and (max-width: 1039 ) {
-
-}
-@media only screen and (min-width: 1040px) and (max-width: 1727 ) {
-}
-@media only screen and (max-width: 500 ) {
-}
