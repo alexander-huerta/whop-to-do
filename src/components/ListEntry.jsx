@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import ExpandIcon from '../icons/ExpandIcon.jsx';
-import DeleteIcon from '../icons/DeleteIcon.jsx';
-import EditIcon from '../icons/EditIcon.jsx';
-import Dropdown from 'react-bootstrap/Dropdown'
+import DropDown from './DropDown.jsx';
 
-const ListEntry = ({item,removeList}) => {
+const ListEntry = ({item,removeList, editList}) => {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState('#242424')
-
 
   return (
 
     <div className = "list-container">
+
+
       <div className = "list">
+
         <div className="list-name">
           {item}
         </div>
@@ -22,7 +22,7 @@ const ListEntry = ({item,removeList}) => {
           fill={color}
           onClick={(e) => {
             setOpen(!open)
-            console.log(item)
+            // console.log(item)
           }}
           onMouseLeave={() => {
             setColor('#242424')}}
@@ -30,10 +30,16 @@ const ListEntry = ({item,removeList}) => {
             setColor('#2FE6FF')}}
 
         />
-      </div>
-        {open && <Dropdown/>}
+
       </div>
 
+      </div>
+      {open && <DropDown
+                item={item}
+                removeList={removeList}
+                editList={editList}
+                />
+      }
 
     </div>
   )

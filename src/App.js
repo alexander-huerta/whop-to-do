@@ -33,7 +33,18 @@ class App extends React.Component {
 
 
   render () {
-    const hasList = this.state.lists.length <= 0 ? <AddListButton addList={this.addList}/> : <List list={this.state.lists} removeList={this.removeList}/>
+    let hasList;
+    if(this.state.lists.length <= 0 ) {
+      hasList =
+        <AddListButton
+          addList={this.addList}/>
+    } else {
+      hasList =
+      <List
+        list={this.state.lists}
+        removeList={this.removeList}
+        editList={this.editList}/>
+      }
 
     return (
       <div className="app">

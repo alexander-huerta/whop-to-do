@@ -5,28 +5,22 @@ import DoneIcon from '../icons/DoneIcon.jsx';
 
 
 const AddListModal = ({addList, item}) => {
-  const [open, setOpen] = useState(true);;
-  const [string, setString] = useState('');
-  const [color, setCancelColor] = useState('#505050')
-  const [color2, setDoneColor] = useState('#505050')
+  const [open, setOpen] = useState(true);
+  const [listInputString, setString] = useState('');
+  const [cancelColor, setCancelColor] = useState('#505050')
+  const [doneColor, setDoneColor] = useState('#505050')
 
   return (
     <div class="modal-dialog modal-fullscreen-sm-down">
       <Modal
         show={open}
-        onHide={()=>setOpen(false)}
-        size="lg"
-        backdrop="static"
         animation={true}
         className="add-list-modal-container"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
       >
-
           <div className="modal-buttons">
             <div className="cancel">
               <CancelIcon
-                fill={color}
+                fill={cancelColor}
                 onClick={() => {
                   setCancelColor('#2FE6FF')
                   setOpen(false)
@@ -38,10 +32,10 @@ const AddListModal = ({addList, item}) => {
 
             <div className="done">
               <DoneIcon
-                fill={color2}
+                fill={doneColor}
                 onClick={() => {
                   setDoneColor('#2FE6FF')
-                  addList(string)
+                  addList(listInputString)
                   setOpen(false)
                 }}
                 onMouseLeave={() => setDoneColor('#505050')}
