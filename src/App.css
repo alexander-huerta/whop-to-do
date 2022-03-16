@@ -1,55 +1,176 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+
+
+/*#####~~ENTIRE APP~~#####*/
+.app {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: rgb(132, 155, 113); */
+}
+a {
+  text-decoration: none !important;
 }
 
-.add-item {
+
+
+/*#####~HEADER~~#####*/
+.header-container {
+  display: flex;
+  align-items:center;
+  height: 96px;
+  width: 100%;
+  /* padding: 32px 0 24px 0; */
+  /* border: 3px solid #af1515; */
 
 }
-.add-item-icon {
-
-}
-
-.header {
-  display:flex;
-  padding:2em;
-  line-height:15x;
-
-}
-
-.list {
-  background-color:#61dafb;
-  border: black;
-}
-
-.item {
-  color:rgb(149, 35, 35)
-}
-
 .profile-pic {
+  margin: 32px 16px 24px 24px;
+}
+.new-list-icon {
+  margin-left:auto;
+  margin-right: 24px;
+}
+/* .title {
+  font-weight: 700;
+  font-size: 32px;
+} */
+
+
+
+/*#####~~LISTS / ADD LIST CARD~~#####*/
+.lists-container {
+}
+.list-card-container, .add-list-card-container {
+  /* display: flex;
+  align-items: center; */
+  height: 60px;
+  margin: 0 24px 16px 24px;
+
+  border: 0.75px solid #ECECEC;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #ccc;
+  transition: 300ms ease-out;
+}
+.list-card, .add-list-card {
+  display: flex;
+  justify-content: space-between;
+}
+.list-card-text, .add-list-card-text {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.expand-icon {
+  padding-right: 16px;
+  padding-left: auto;
+  /* padding: 32px 16px 24px 24px;
+  /* align-self: flex-end; */
 
 }
 
 
 
-.primaryModal {
-  appearance: button;
-  text-rendering: auto;
-  color: -internal-light-dark(black, white);
-  letter-spacing: normal;
-  word-spacing: normal;
-
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: center;
-  align-items: flex-start;
-  cursor: default;
-  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
-  box-sizing: border-box;
-  margin: 0em;
-  font: 400 13.3333px Arial;
-  padding: 1px 6px;
-  border-width: 2px;
-  border-style: outset;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+/*#####~~ADD LIST MODAL~~#####*/
+.modal-buttons {
+  display:flex;
+  align-items:center;
 }
+.cancel {
+  margin: 32px 0 24px 24px;
+}
+.done {
+  margin-left:auto;
+  margin-right: 24px;
+}
+.modal-input{
+  line-height:40px;
+}
+input {
+  caret-color: #2FE6FF;
+}
+
+
+
+/* #####~~DROP DOWN~~##### */
+.dropdown {
+  /* transform: translateY(2px); */
+  height: auto;
+  width: auto;
+  float:right;
+  padding: 16px;
+  margin: 16px;
+  border: 1px solid #ECECEC;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  /* display: flex;
+  flex-flow: column;
+  justify-content: flex-start; */
+}
+.edit-icon {
+}
+.delete-icon {
+
+}
+
+
+
+
+/* @media only screen and (min-width: 320px) and (max-width: 1039px) {
+  body {
+    background-color: rgb(80, 126, 43);
+  } */
+/* } */
+
+/* @media only screen and (min-width: 1040px) and (max-width: 1727px) { */
+@media only screen and (min-width: 1040px) {
+  .app {
+    background-color: lightblue;
+  }
+
+
+/*#####~HEADER~~#####*/
+  .profile-pic {
+    margin-left: 40px;
+  }
+  .new-list-icon {
+    margin-right: 40px;
+  }
+
+  /* MODAL */
+  .cancel {
+    margin-left: 40px;
+  }
+  .done {
+    margin-left:auto;
+    margin-right: 24px;
+  }
+  .modal-input{
+    background: rgb(75, 77, 200);
+    line-height:24px;
+  }
+
+  /*#####~~LISTS / ADD LIST CARD~~#####*/
+.list-card-container, .add-list-card-container {
+  margin: 0 40px 16px 40px;
+}
+}
+
+
+
+@media only screen and (min-width: 1727px) {
+  .app {
+    background-color: rgb(216, 44, 44);
+  }
+  .list-card-container, .add-list-card-container {
+    margin: 0 384px 16px 384px;
+  }
+}
+
+

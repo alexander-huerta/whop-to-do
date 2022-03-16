@@ -1,27 +1,45 @@
-import React from 'react';
-import profile from '../profile.svg';
-import Button from 'react-bootstrap/Button';
-import CreateListEntryModal from './CreateListEntryModal.jsx';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import ProfilePicIcon from '../icons/ProfilePicIcon.jsx';
+import NewListIcon from '../icons/NewListIcon.jsx';
+import AddListModal from './AddListModal.jsx';
 
-const Header = ({addList}) => {
+export default function Header({ addList }) {
+  const [open, setOpen] = useState(false);
+  const [color, setColor] = useState('#242424');
+
   return (
+    <>
+      {/* {open && <AddListModal addList={addList}/>} */}
+      {/* <div className ="header"> */}
 
-    <div className="header">
-      <img src={profile} className="profile-pic" alt="profile"/>
+      <div className="profile-pic">
+        <ProfilePicIcon />
+      </div>
 
-      <h1> Lists</h1>
+      <h3 className="title"> Lists</h3>
 
-      <CreateListEntryModal addList={addList}/>
+      <div className="new-list-icon">
+        <NewListIcon
+          fill={color}
+          onClick={() => {
+            setOpen(!open);
+            setColor('#2FE6FF');
+          }}
+          onMouseLeave={() => {
+            setColor('#242424');
+          }}
+        />
+      </div>
 
+      {open && <AddListModal addList={addList} />}
 
-    </div>
-  )
-
-
+      {/* </div> */}
+    </>
+  );
 }
 
-export default Header;
+Header.propTypes = {
+  addList: PropTypes.func.isRequired,
 
-
-
-
+};
