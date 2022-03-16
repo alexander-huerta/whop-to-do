@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import EditIcon from '../icons/EditIcon.jsx';
 import DeleteIcon from '../icons/DeleteIcon.jsx';
 
-function DropDown({ item, removeList, editList }) {
+export default function DropDown({ item, removeList, editList }) {
   const [open, setOpen] = useState(false);
   const [editColor, setEditColor] = useState('#242424');
   const [deleteColor, setDeleteColor] = useState('#242424');
@@ -15,7 +16,7 @@ function DropDown({ item, removeList, editList }) {
           fill={editColor}
           onClick={() => {
             setEditColor('#2FE6FF');
-            console.log(item);
+            // console.log(item);
             setOpen(false);
           }}
           onMouseLeave={() => setEditColor('#242424')}
@@ -41,5 +42,3 @@ DropDown.propTypes = {
   removeList: PropTypes.func.isRequired,
   editList: PropTypes.func.isRequired,
 };
-
-export default DropDown;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AddIcon from '../icons/AddIcon.jsx';
 import AddListModal from './AddListModal.jsx';
 
-function AddListCard({ addList }) {
+export default function AddListCard({ addList }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState('#242424');
 
@@ -39,7 +39,5 @@ function AddListCard({ addList }) {
 AddListCard.propTypes = {
   addList: PropTypes.func.isRequired,
 };
-
-export default AddListCard;
 
 // {open && <AddListModal addList={addList}/>}

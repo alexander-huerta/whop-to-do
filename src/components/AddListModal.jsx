@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import CancelIcon from '../icons/CancelIcon.jsx';
 import DoneIcon from '../icons/DoneIcon.jsx';
 
-function AddListModal({ addList, item }) {
+export default function AddListModal({ addList, item }) {
   const [open, setOpen] = useState(true);
   const [listInputString, setString] = useState('');
   const [cancelColor, setCancelColor] = useState('#505050');
@@ -60,5 +60,3 @@ AddListModal.propTypes = {
   item: PropTypes.string.isRequired,
   addList: PropTypes.func.isRequired,
 };
-
-export default AddListModal;

@@ -4,7 +4,7 @@ import ProfilePicIcon from '../icons/ProfilePicIcon.jsx';
 import NewListIcon from '../icons/NewListIcon.jsx';
 import AddListModal from './AddListModal.jsx';
 
-function Header({ addList }) {
+export default function Header({ addList }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState('#242424');
 
@@ -43,5 +43,3 @@ Header.propTypes = {
   addList: PropTypes.func.isRequired,
 
 };
-
-export default Header;

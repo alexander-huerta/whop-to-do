@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ExpandIcon from '../icons/ExpandIcon.jsx';
 import DropDown from './DropDown.jsx';
 
-function ListCard({ item, removeList, editList }) {
+export default function ListCard({ item, removeList, editList }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState('#242424');
 
@@ -17,7 +17,7 @@ function ListCard({ item, removeList, editList }) {
         <div className="expand-icon">
           <ExpandIcon
             fill={color}
-            onClick={(e) => {
+            onClick={() => {
               setOpen(!open);
             }}
             onMouseLeave={() => {
@@ -49,7 +49,6 @@ ListCard.propTypes = {
   removeList: PropTypes.func.isRequired,
   editList: PropTypes.func.isRequired,
 };
-export default ListCard;
 
 // onClick={() => {
 //   removeList(item)
