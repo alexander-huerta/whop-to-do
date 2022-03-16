@@ -4,7 +4,6 @@ import Header from './components/Header.jsx';
 import Lists from './components/Lists.jsx';
 import AddListCard from './components/AddListCard.jsx';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -20,47 +19,53 @@ class App extends React.Component {
   }
 
   addList(listToAdd) {
-    if(listToAdd !== '')
-      this.setState({ lists: [...this.state.lists, listToAdd] })
+    const { lists } = this.state;
+    if (listToAdd !== '') this.setState({ lists: [...lists, listToAdd] });
   }
+
   removeList(listToDelete) {
-    this.setState({lists: this.state.lists.filter((list) => list !== listToDelete)});
+    const { lists } = this.state;
+    this.setState({ lists: lists.filter((list) => list !== listToDelete) });
   }
-  editList(listToUpdate, newList) {
-    const listsAfterDeletion = this.state.lists.filter((list) => list !== listToUpdate)
-    this.setState({ lists: [...this.state.lists, listsAfterDeletion] })
+  // newList
+
+  editList(listToUpdate) {
+    const { lists } = this.state;
+    const listsAfterDeletion = lists.filter((list) => list !== listToUpdate);
+    this.setState({ lists: [...lists, listsAfterDeletion] });
   }
 
+  render() {
+    const { lists } = this.state;
 
-  render () {
     let hasList;
-    if(this.state.lists.length <= 0 ) {
-      hasList =
+    if (lists.length <= 0) {
+      hasList = (
         <AddListCard
-          addList={this.addList}/>
+          addList={this.addList}
+        />
+      );
     } else {
-      hasList =
-      <Lists
-        list={this.state.lists}
-        removeList={this.removeList}
-        editList={this.editList}/>
-      }
+      hasList = (
+        <Lists
+          list={lists}
+          removeList={this.removeList}
+          editList={this.editList}
+        />
+      );
+    }
 
     return (
       <div className="app">
-
         <div className="header-container ">
-          <Header addList={this.addList}/>
+          <Header addList={this.addList} />
         </div>
-
-          <div className="lists-container">
-            {hasList}
-          </div>
-
+        <div className="lists-container">
+          {hasList}
+        </div>
       </div>
-    )
+    );
   }
 }
-
 
 export default App;

@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ListCard from './ListCard.jsx';
 
-const Lists = ({list, removeList, editList}) => {
+function Lists({ list, removeList, editList }) {
   return (
     <>
       {list.map((item) => (
@@ -9,10 +10,16 @@ const Lists = ({list, removeList, editList}) => {
           item={item}
           removeList={removeList}
           editList={editList}
-       />
+        />
       ))}
     </>
-  )
+  );
 }
+
+Lists.propTypes = {
+  list: PropTypes.arrayOf.isRequired,
+  removeList: PropTypes.func.isRequired,
+  editList: PropTypes.func.isRequired,
+};
 
 export default Lists;
