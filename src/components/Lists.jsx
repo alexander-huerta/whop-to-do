@@ -1,18 +1,18 @@
 import React from 'react';
-import ListEntry from './ListEntry.jsx';
+import ListCard from './ListCard.jsx';
 
-const List = ({list, removeList, editList}) => {
+const Lists = ({list, removeList, editList}) => {
   return (
-    <div classNAme="list-container">
+    <>
       {list.map((item) => (
-        <ListEntry
+        <ListCard
           item={item}
           removeList={removeList}
           editList={editList}
        />
       ))}
-    </div>
+    </>
   )
 }
 
-export default List;
+export default Lists;

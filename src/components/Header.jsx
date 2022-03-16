@@ -10,7 +10,7 @@ const Header = ({addList}) => {
   return (
     <>
     {/* {open && <AddListModal addList={addList}/>} */}
-      <div className ="header">
+      {/* <div className ="header"> */}
 
         <div className="profile-pic">
           <ProfilePicIcon />
@@ -32,7 +32,7 @@ const Header = ({addList}) => {
 
         {open && <AddListModal addList={addList}/>}
 
-      </div>
+      {/* </div> */}
     </>
   )
 }

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inter');
 
+
+
 /*#####~~ENTIRE APP~~#####*/
 .app {
   display: flex;
@@ -8,93 +10,105 @@
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
-  line-height: 26px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: rgb(132, 155, 113); */
 }
 a {
   text-decoration: none !important;
 }
 
 
+
 /*#####~HEADER~~#####*/
-/* .header-container {
-  display: flex;
-  align-items: center;
-} */
-.header{
+.header-container {
   display: flex;
   align-items:center;
-  height: 40px;
+  height: 96px;
   width: 100%;
-  padding: 32px 0 24px 0;
+  /* padding: 32px 0 24px 0; */
+  /* border: 3px solid #af1515; */
 
-  }
+}
 .profile-pic {
-  padding: 0 16px 0 40px;
+  margin: 32px 16px 24px 24px;
 }
 .new-list-icon {
   margin-left:auto;
-  margin-right: 40px;
+  margin-right: 24px;
 }
 /* .title {
   font-weight: 700;
   font-size: 32px;
 } */
-@media only screen and (min-width: 992px){
-  .header-expand-lg {
-    padding: 0 32px!important;
-}
-}
 
 
-/*#####~~LISTS~~#####*/
+
+/*#####~~LISTS / ADD LIST CARD~~#####*/
 .lists-container {
-  margin: 0 10px 0 10px;
 }
-.list-container {
-  /* display: flex; */
+.list-card-container, .add-list-card-container {
+  /* display: flex;
+  align-items: center; */
+  height: 60px;
+  margin: 0 24px 16px 24px;
+
   border: 0.75px solid #ECECEC;
   border-radius: 8px;
   box-shadow: 0 2px 5px #ccc;
-  padding: 16px;
-  margin: 16px;
-  height: 60px;
+  transition: 300ms ease-out;
 }
-.list {
+.list-card, .add-list-card {
   display: flex;
-  justify-content:space-between;
-  /* flex-direction: row;
-  flex-wrap: nowrap; */
-  /* position:sticky; */
-  padding: 16px;
-  /* margin: auto;
-  width: 100%; */
+  justify-content: space-between;
 }
-.list-name {
-  /* display: flex;
-  justify-content: space-between; */
+.list-card-text, .add-list-card-text {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.expand-icon {
+  padding-right: 16px;
+  padding-left: auto;
+  /* padding: 32px 16px 24px 24px;
   /* align-self: flex-end; */
 
 }
-.expand-icon {
 
 
 
-
+/*#####~~ADD LIST MODAL~~#####*/
+.modal-buttons {
+  display:flex;
+  align-items:center;
 }
-/* #####LIST ENTRY##### */
+.cancel {
+  margin: 32px 0 24px 24px;
+}
+.done {
+  margin-left:auto;
+  margin-right: 24px;
+}
+.modal-input{
+  line-height:40px;
+}
+input {
+  caret-color: #2FE6FF;
+}
+
+
+
+/* #####~~DROP DOWN~~##### */
 .dropdown {
   /* transform: translateY(2px); */
-  border: 1px solid #ECECEC;
-  background-color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
   height: auto;
   width: auto;
   float:right;
   padding: 16px;
   margin: 16px;
+  border: 1px solid #ECECEC;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
   /* display: flex;
   flex-flow: column;
   justify-content: flex-start; */
@@ -107,47 +121,56 @@ a {
 
 
 
-/*#####~~NEW LIST MODAL~~#####*/
-.add-list-modal-container {
-  border: 0.75px solid #d11a1a;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px #ccc;
-  transition: 300ms ease-out;
-  padding: 16px;
-  margin: 16px;
-  z-index: 200;
 
+/* @media only screen and (min-width: 320px) and (max-width: 1039px) {
+  body {
+    background-color: rgb(80, 126, 43);
+  } */
+/* } */
+
+/* @media only screen and (min-width: 1040px) and (max-width: 1727px) { */
+@media only screen and (min-width: 1040px) {
+  .app {
+    background-color: lightblue;
+  }
+
+
+/*#####~HEADER~~#####*/
+  .profile-pic {
+    margin-left: 40px;
+  }
+  .new-list-icon {
+    margin-right: 40px;
+  }
+
+  /* MODAL */
+  .cancel {
+    margin-left: 40px;
+  }
+  .done {
+    margin-left:auto;
+    margin-right: 24px;
+  }
+  .modal-input{
+    background: rgb(75, 77, 200);
+    line-height:24px;
+  }
+
+  /*#####~~LISTS / ADD LIST CARD~~#####*/
+.list-card-container, .add-list-card-container {
+  margin: 0 40px 16px 40px;
 }
-.modal-buttons {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-weight:600;
-  padding: 16px;
-  margin: 16px;
-}
-.modal-input{
-  border: none;
-  padding: 16px;
-  font-size: 28px;
-}
-.cancel {
-}
-.done {
-
 }
 
 
 
-
-
-/* #####ICONS##### */
-/* .icon {
-  display: flex;
-  justify-content: center;
-  align-items:flex-end;
-  transition: filter 300ms;
-
-} */
+@media only screen and (min-width: 1727px) {
+  .app {
+    background-color: rgb(216, 44, 44);
+  }
+  .list-card-container, .add-list-card-container {
+    margin: 0 384px 16px 384px;
+  }
+}
 
 

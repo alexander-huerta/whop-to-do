@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header.jsx';
-import List from './components/List.jsx';
-import AddListButton from './components/AddListButton.jsx';
+import Lists from './components/Lists.jsx';
+import AddListCard from './components/AddListCard.jsx';
 
 
 class App extends React.Component {
@@ -36,11 +36,11 @@ class App extends React.Component {
     let hasList;
     if(this.state.lists.length <= 0 ) {
       hasList =
-        <AddListButton
+        <AddListCard
           addList={this.addList}/>
     } else {
       hasList =
-      <List
+      <Lists
         list={this.state.lists}
         removeList={this.removeList}
         editList={this.editList}/>

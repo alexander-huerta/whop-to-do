@@ -11,10 +11,9 @@ const AddListModal = ({addList, item}) => {
   const [doneColor, setDoneColor] = useState('#505050')
 
   return (
-    <div class="modal-dialog modal-fullscreen-sm-down">
+    <div >
       <Modal
         show={open}
-        animation={true}
         className="add-list-modal-container"
       >
           <div className="modal-buttons">
@@ -42,8 +41,8 @@ const AddListModal = ({addList, item}) => {
                 onMouseOver={() => setDoneColor('#242424')}
               />
             </div>
-          </div>
 
+          </div>
           <input
           className="modal-input"
             type={"text"}
@@ -51,6 +50,7 @@ const AddListModal = ({addList, item}) => {
             value={item}
             onChange={(e) => setString(e.target.value)}
         />
+
 
       </Modal>
     </div>
