@@ -8,6 +8,7 @@ export default function Lists({ list, removeList, editList }) {
       {list.map((item) => (
         <ListCard
           item={item}
+          key={item}
           removeList={removeList}
           editList={editList}
         />
