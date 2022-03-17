@@ -25,11 +25,16 @@ export default function App() {
     setLists({ lists: [...lists, listsAfterDeletion] });
   };
 
+  const updateModal = () => {
+    setModalStatus(!modalOpen);
+  };
+
   let hasList;
   if (!lists) {
     hasList = (
       <AddListCard
         addList={addList}
+        updateModal={updateModal}
       />
     );
   } else {
@@ -38,18 +43,19 @@ export default function App() {
         list={lists}
         removeList={removeList}
         editList={editList}
+        updateModal={updateModal}
       />
     );
   }
   if (modalOpen) {
     return (
-      <AddListModal addList={addList} />
+      <AddListModal addList={addList} updateModal={updateModal} />
     );
   }
   return (
     <div className="app">
       <div className="header-container ">
-        <Header addList={addList} />
+        <Header addList={addList} updateModal={updateModal} />
       </div>
       <div className="lists-container">
         {hasList}

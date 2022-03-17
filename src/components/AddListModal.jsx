@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CancelIcon from '../icons/CancelIcon.jsx';
 import DoneIcon from '../icons/DoneIcon.jsx';
 
-export default function AddListModal({ addList, item }) {
+export default function AddListModal({ updateModal, addList, item }) {
   const [open, setOpen] = useState(true);
   const [listInputString, setString] = useState('');
   const [cancelColor, setCancelColor] = useState('#505050');
@@ -57,4 +57,5 @@ export default function AddListModal({ addList, item }) {
 AddListModal.propTypes = {
   item: PropTypes.string.isRequired,
   addList: PropTypes.func.isRequired,
+  updateModal: PropTypes.func.isRequired,
 };
