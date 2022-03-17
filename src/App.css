@@ -42,21 +42,20 @@
 /*#####~~LISTS / ADD LIST CARD~~#####*/
 .lists-container {
   position:relative;
-
-
 }
 .list-card-container, .add-list-card-container {
   height: 60px;
-  margin: 0 24px 16px 24px;
+  margin: 10 24px 16px 24px;
   border: 0.75px solid #ECECEC;
   border-radius: 8px;
   box-shadow: 0 2px 5px #ccc;
+  position:inherit;
   transition: 300ms ease-out;
 }
 .list-card, .add-list-card {
   display: flex;
   justify-content: space-between;
-  padding-top:2px;
+  margin-top:10px;
 }
 .list-card-text, .add-list-card-text {
   padding-left: 16px;
@@ -94,11 +93,9 @@ input {
 .dropdown {
   height: 123;
   width: 116;
-  /* float:right; */
   position:fixed;
   right:0;
   z-index:1;
-
   padding: 16px;
   margin-right: 40px;
   margin-top: 8px;
@@ -106,8 +103,6 @@ input {
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  /* position:absolute; solves issue of drop down
-  moving elemens but aligns to left */
   /* transform: translateY(8px); drops y axis*/
 }
 .edit-icon {
