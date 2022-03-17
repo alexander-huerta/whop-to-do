@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import EditIcon from '../icons/EditIcon.jsx';
 import DeleteIcon from '../icons/DeleteIcon.jsx';
 
-export default function DropDown({ item, removeList, editList }) {
-  const [open, setOpen] = useState(false);
+export default function DropDown({
+  updateModal, removeList, editList, item,
+}) {
   const [editColor, setEditColor] = useState('#242424');
   const [deleteColor, setDeleteColor] = useState('#242424');
 
@@ -16,8 +17,8 @@ export default function DropDown({ item, removeList, editList }) {
           fill={editColor}
           onClick={() => {
             setEditColor('#2FE6FF');
-            // console.log(item);
-            setOpen(false);
+            updateModal(item);
+            removeList(item);
           }}
           onMouseLeave={() => setEditColor('#242424')}
         />
@@ -28,7 +29,6 @@ export default function DropDown({ item, removeList, editList }) {
           onClick={() => {
             setDeleteColor('#FF3333');
             removeList(item);
-            setOpen(false);
           }}
           onMouseLeave={() => setDeleteColor('#242424')}
         />
@@ -41,4 +41,5 @@ DropDown.propTypes = {
   item: PropTypes.string.isRequired,
   removeList: PropTypes.func.isRequired,
   editList: PropTypes.func.isRequired,
+  updateModal: PropTypes.func.isRequired,
 };

@@ -24,7 +24,8 @@ export default function App() {
     setLists({ lists: [...lists, listsAfterDeletion] });
   };
 
-  const updateModal = () => {
+  const updateModal = (val) => {
+    if (val) setInputValue(val);
     setModalStatus(!modalOpen);
   };
 
@@ -58,7 +59,10 @@ export default function App() {
   return (
     <div className="app">
       <div className="header-container ">
-        <Header addList={addList} updateModal={updateModal} />
+        <Header
+          addList={addList}
+          updateModal={updateModal}
+        />
       </div>
       <div className="lists-container">
         {hasList}

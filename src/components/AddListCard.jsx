@@ -11,7 +11,6 @@ export default function AddListCard({ updateModal }) {
         <div className="add-list-card-text">
           Create a list
         </div>
-
         <div className="add-list-icon">
           <AddIcon
             fill={color}

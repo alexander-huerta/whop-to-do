@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CancelIcon from '../icons/CancelIcon.jsx';
 import DoneIcon from '../icons/DoneIcon.jsx';
@@ -8,10 +7,6 @@ export default function AddListModal({ updateModal, addList, item }) {
   const [listInputString, setString] = useState(item);
   const [cancelColor, setCancelColor] = useState('#505050');
   const [doneColor, setDoneColor] = useState('#505050');
-
-  useEffect(() => {
-    if (item)setString(item);
-  });
 
   return (
     <div
@@ -44,15 +39,16 @@ export default function AddListModal({ updateModal, addList, item }) {
         </div>
 
       </div>
-      <div className="modal-input">
+      <form className="modal-input">
         <input
           type="text"
+          defaultValue={listInputString}
           placeholder="List title"
           onChange={(e) => {
             setString(e.target.value);
           }}
         />
-      </div>
+      </form>
     </div>
   );
 }
