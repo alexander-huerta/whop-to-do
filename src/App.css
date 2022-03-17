@@ -32,7 +32,8 @@
  .title {
 }
 
-/*#####~~LISTS / ADD LIST CARD~~#####*/
+/*#####~~LISTS~~#####*/
+/*#####~~ADD LIST CARD~~#####*/
 .lists-container {
   position:relative;
 }
@@ -60,10 +61,8 @@
 
 /*#####~~ADD LIST MODAL~~#####*/
 .add-list-modal-container {
-  /* display: flex;
-  align-items:center; */
   background-color: rgb(170, 246, 182);
-  /* height: 88px; */
+  height: 88px;
   width: 100%;
 }
 .modal-buttons {
@@ -80,7 +79,6 @@
 .modal-input{
   padding: 0 24px 24px 24px;
 }
-
 input {
   caret-color: #2FE6FF;
   border-width:0px;
@@ -91,26 +89,24 @@ input {
   font-style: normal;
   font-weight: 600;
 }
-input:focus {outline:none!important;} */
+input:focus {outline:none!important;}
 
 /* #####~~DROP DOWN~~##### */
 .dropdown {
   height: 123;
   width: 116;
-  position:fixed;
-  right:0;
-  z-index:1;
-  padding: 16px;
-  margin-right: 40px;
-  margin-top: 8px;
   border: 1px solid #ECECEC;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  /* transform: translateY(8px); drops y axis*/
-  display: flex;
-
+  position:fixed;
+  z-index:1;
+  right:0;
+  padding: 16px;
+  margin-right: 40px;
+  margin-top: 8px;
 }
+
 .edit-icon {
 }
 .delete-icon {
@@ -118,16 +114,12 @@ input:focus {outline:none!important;} */
 }
 
 @media only screen and (min-width: 1040px) {
-  .app {
-  }
-  /*#####~HEADER~~#####*/
   .profile-pic {
     padding-left: 40px;
   }
   .new-list-icon {
     padding-right: 40px;
   }
-  /* MODAL */
   .add-list-modal-container {
     background-color: lightblue;
   }
@@ -150,9 +142,6 @@ input:focus {outline:none!important;} */
 }
 
 @media only screen and (min-width: 1727px) {
-  .app {
-    background-color: rgb(216, 44, 44);
-  }
   .list-card-container, .add-list-card-container {
     margin: 0 384px 16px 384px;
   }
