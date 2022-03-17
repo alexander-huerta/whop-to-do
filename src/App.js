@@ -6,9 +6,9 @@ import AddListCard from './components/AddListCard.jsx';
 import AddListModal from './components/AddListModal.jsx';
 
 export default function App() {
-  const [lists, setLists] = useState(['apples', 'oranges', 'grapes']);
+  const [lists, setLists] = useState();
   // eslint-disable-next-line no-unused-vars
-  const [modalOpen, setModal] = useState(true);
+  const [modalOpen, setModalStatus] = useState(false);
 
   const addList = (listToAdd) => {
     // eslint-disable-next-line no-shadow
@@ -26,7 +26,7 @@ export default function App() {
   };
 
   let hasList;
-  if (lists.length <= 0) {
+  if (!lists) {
     hasList = (
       <AddListCard
         addList={addList}
