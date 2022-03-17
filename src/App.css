@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Inter');
 
-
 /*#####~~ENTIRE APP~~#####*/
 .app {
   display: flex;
@@ -14,22 +13,18 @@
   background-color: rgb(132, 155, 113);
 }
 
-
 /*#####~HEADER~~#####*/
 .header-container {
   display: flex;
   align-items:center;
   height: 96px;
   width: 100%;
-
 }
 .profile-pic {
   margin: 32px 16px 24px 24px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-
-
 }
 .new-list-icon {
   margin-left:auto;
@@ -38,14 +33,13 @@
  .title {
 }
 
-
 /*#####~~LISTS / ADD LIST CARD~~#####*/
 .lists-container {
   position:relative;
 }
-.list-card-container, .add-list-card-container {
+.list-card-container, .add-list-card-container  {
   height: 60px;
-  margin: 10 24px 16px 24px;
+  margin: 0 24px 16px 24px;
   border: 0.75px solid #ECECEC;
   border-radius: 8px;
   box-shadow: 0 2px 5px #ccc;
@@ -68,26 +62,42 @@
   /* padding: 32px 16px 24px 24px;*/
 }
 
-
 /*#####~~ADD LIST MODAL~~#####*/
+.add-list-modal-container {
+  /* display: flex;
+  align-items:center; */
+  background-color: rgb(170, 246, 182);
+  /* height: 88px; */
+  width: 100%;
+}
 .modal-buttons {
-  display:flex;
-  align-items:center;
+  background-color: rgb(174, 152, 189);
+  display: flex;
+  justify-content:space-between;
 }
 .cancel {
-  margin: 32px 0 24px 24px;
+  padding: 32px 0 24px 24px;
 }
 .done {
-  margin-left:auto;
-  margin-right: 24px;
+  padding: 32px 24px 24px 0;
 }
 .modal-input{
-  line-height:40px;
-}
-input {
-  caret-color: #2FE6FF;
+  padding: 0 24px 24px 24px;
 }
 
+input {
+
+  caret-color: #2FE6FF;
+  border-width:0px;
+  border:none;
+  height: 26px;
+  width: 100%;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+}
+input:focus {outline:none!important;} */
 
 /* #####~~DROP DOWN~~##### */
 .dropdown {
@@ -111,19 +121,11 @@ input {
 
 }
 
-
-/* @media only screen and (min-width: 320px) and (max-width: 1039px) {
-  body {
-    background-color: rgb(80, 126, 43);
-  } */
-/* } */
-
-/* @media only screen and (min-width: 1040px) and (max-width: 1727px) { */
 @media only screen and (min-width: 1040px) {
   .app {
     background-color: lightblue;
   }
-/*#####~HEADER~~#####*/
+  /*#####~HEADER~~#####*/
   .profile-pic {
     margin-left: 40px;
   }
@@ -131,27 +133,26 @@ input {
     margin-right: 40px;
   }
   /* MODAL */
+  .add-list-modal-container {
+    background-color: lightblue;
+  }
   .cancel {
-    margin-left: 40px;
+    padding-left: 40px;
   }
   .done {
-    margin-left:auto;
-    margin-right: 24px;
+    padding-left: 40px;
   }
   .modal-input{
-    background: rgb(75, 77, 200);
-    line-height:24px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
-  /*#####~~LISTS / ADD LIST CARD~~#####*/
-.list-card-container, .add-list-card-container {
+  .list-card-container, .add-list-card-container {
   margin: 0 40px 16px 40px;
-}
-  /*#####~~DROPDOWN~~#####*/
-.dropdown {
+  }
+  .dropdown {
   margin-right: 56px;
+  }
 }
-}
-
 
 @media only screen and (min-width: 1727px) {
   .app {
@@ -162,6 +163,19 @@ input {
   }
   .dropdown {
     margin-right: 400px;
+  }
+  .add-list-modal-container {
+    background-color: rgb(240, 114, 208);
+  }
+  .cancel {
+    padding-left: 384px;
+  }
+  .done {
+    padding-right: 384px;
+  }
+  .modal-input{
+    padding-left: 384px;
+    padding-right: 384px;
   }
 }
 

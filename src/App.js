@@ -3,9 +3,13 @@ import './App.css';
 import Header from './components/Header.jsx';
 import Lists from './components/Lists.jsx';
 import AddListCard from './components/AddListCard.jsx';
+import AddListModal from './components/AddListModal.jsx';
 
 export default function App() {
   const [lists, setLists] = useState(['apples', 'oranges', 'grapes']);
+  // eslint-disable-next-line no-unused-vars
+  const [modalOpen, setModal] = useState(true);
+
   const addList = (listToAdd) => {
     // eslint-disable-next-line no-shadow
     if (listToAdd !== '') setLists((lists) => [...lists, listToAdd]);
@@ -37,7 +41,11 @@ export default function App() {
       />
     );
   }
-
+  if (modalOpen) {
+    return (
+      <AddListModal addList={addList} />
+    );
+  }
   return (
     <div className="app">
       <div className="header-container ">

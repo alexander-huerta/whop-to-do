@@ -8,6 +8,11 @@ export default function Header({ addList }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState('#242424');
 
+  if (open) {
+    return (
+      <AddListModal addList={addList} />
+    );
+  }
   return (
     <>
       {/* {open && <AddListModal addList={addList}/>} */}
@@ -32,7 +37,7 @@ export default function Header({ addList }) {
         />
       </div>
 
-      {open && <AddListModal addList={addList} />}
+      {/* {open && <AddListModal addList={addList} />} */}
 
       {/* </div> */}
     </>
