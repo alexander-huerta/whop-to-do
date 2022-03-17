@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ProfilePicIcon from '../icons/ProfilePicIcon.jsx';
+import pic from '../icons/pic.png';
 import NewListIcon from '../icons/NewListIcon.jsx';
 import AddListModal from './AddListModal.jsx';
 
@@ -14,7 +14,7 @@ export default function Header({ addList }) {
       {/* <div className ="header"> */}
 
       <div className="profile-pic">
-        <ProfilePicIcon />
+        <img src={pic} alt="profile-pic" />
       </div>
 
       <h3 className="title"> Lists</h3>

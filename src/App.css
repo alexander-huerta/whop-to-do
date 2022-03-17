@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter');
 
 
-
 /*#####~~ENTIRE APP~~#####*/
 .app {
   display: flex;
@@ -12,12 +11,8 @@
   font-size: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: rgb(132, 155, 113); */
+  background-color: rgb(132, 155, 113);
 }
-a {
-  text-decoration: none !important;
-}
-
 
 
 /*#####~HEADER~~#####*/
@@ -26,33 +21,33 @@ a {
   align-items:center;
   height: 96px;
   width: 100%;
-  /* padding: 32px 0 24px 0; */
-  /* border: 3px solid #af1515; */
 
 }
 .profile-pic {
   margin: 32px 16px 24px 24px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+
+
 }
 .new-list-icon {
   margin-left:auto;
   margin-right: 24px;
 }
-/* .title {
-  font-weight: 700;
-  font-size: 32px;
-} */
-
+ .title {
+}
 
 
 /*#####~~LISTS / ADD LIST CARD~~#####*/
 .lists-container {
+  position:relative;
+
+
 }
 .list-card-container, .add-list-card-container {
-  /* display: flex;
-  align-items: center; */
   height: 60px;
   margin: 0 24px 16px 24px;
-
   border: 0.75px solid #ECECEC;
   border-radius: 8px;
   box-shadow: 0 2px 5px #ccc;
@@ -61,6 +56,7 @@ a {
 .list-card, .add-list-card {
   display: flex;
   justify-content: space-between;
+  padding-top:2px;
 }
 .list-card-text, .add-list-card-text {
   padding-left: 16px;
@@ -69,11 +65,9 @@ a {
 .expand-icon {
   padding-right: 16px;
   padding-left: auto;
-  /* padding: 32px 16px 24px 24px;
-  /* align-self: flex-end; */
-
+  align-self: flex-end;
+  /* padding: 32px 16px 24px 24px;*/
 }
-
 
 
 /*#####~~ADD LIST MODAL~~#####*/
@@ -96,30 +90,31 @@ input {
 }
 
 
-
 /* #####~~DROP DOWN~~##### */
 .dropdown {
-  /* transform: translateY(2px); */
-  height: auto;
-  width: auto;
-  float:right;
+  height: 123;
+  width: 116;
+  /* float:right; */
+  position:fixed;
+  right:0;
+  z-index:1;
+
   padding: 16px;
-  margin: 16px;
+  margin-right: 40px;
+  margin-top: 8px;
   border: 1px solid #ECECEC;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  /* display: flex;
-  flex-flow: column;
-  justify-content: flex-start; */
+  /* position:absolute; solves issue of drop down
+  moving elemens but aligns to left */
+  /* transform: translateY(8px); drops y axis*/
 }
 .edit-icon {
 }
 .delete-icon {
 
 }
-
-
 
 
 /* @media only screen and (min-width: 320px) and (max-width: 1039px) {
@@ -133,8 +128,6 @@ input {
   .app {
     background-color: lightblue;
   }
-
-
 /*#####~HEADER~~#####*/
   .profile-pic {
     margin-left: 40px;
@@ -142,7 +135,6 @@ input {
   .new-list-icon {
     margin-right: 40px;
   }
-
   /* MODAL */
   .cancel {
     margin-left: 40px;
@@ -155,13 +147,15 @@ input {
     background: rgb(75, 77, 200);
     line-height:24px;
   }
-
   /*#####~~LISTS / ADD LIST CARD~~#####*/
 .list-card-container, .add-list-card-container {
   margin: 0 40px 16px 40px;
 }
+  /*#####~~DROPDOWN~~#####*/
+.dropdown {
+  margin-right: 56px;
 }
-
+}
 
 
 @media only screen and (min-width: 1727px) {
@@ -170,6 +164,9 @@ input {
   }
   .list-card-container, .add-list-card-container {
     margin: 0 384px 16px 384px;
+  }
+  .dropdown {
+    margin-right: 400px;
   }
 }
 

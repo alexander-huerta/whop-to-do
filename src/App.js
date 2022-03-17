@@ -1,71 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header.jsx';
 import Lists from './components/Lists.jsx';
 import AddListCard from './components/AddListCard.jsx';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lists: ['exercises', 'supermarket'],
-    };
-    // this.state = {
-    //   lists: [],
-    // };
-    this.addList = this.addList.bind(this);
-    this.removeList = this.removeList.bind(this);
-    this.editList = this.editList.bind(this);
-  }
+export default function App() {
+  const [lists, setLists] = useState(['apples', 'oranges', 'grapes']);
+  const addList = (listToAdd) => {
+    // eslint-disable-next-line no-shadow
+    if (listToAdd !== '') setLists((lists) => [...lists, listToAdd]);
+  };
 
-  addList(listToAdd) {
-    const { lists } = this.state;
-    if (listToAdd !== '') this.setState({ lists: [...lists, listToAdd] });
-  }
+  const removeList = (listToDelete) => {
+    // eslint-disable-next-line no-shadow
+    setLists((lists) => lists.filter((list) => list !== listToDelete));
+  };
 
-  removeList(listToDelete) {
-    const { lists } = this.state;
-    this.setState({ lists: lists.filter((list) => list !== listToDelete) });
-  }
-  // newList
-
-  editList(listToUpdate) {
-    const { lists } = this.state;
+  const editList = (listToUpdate) => {
     const listsAfterDeletion = lists.filter((list) => list !== listToUpdate);
-    this.setState({ lists: [...lists, listsAfterDeletion] });
-  }
+    setLists({ lists: [...lists, listsAfterDeletion] });
+  };
 
-  render() {
-    const { lists } = this.state;
-
-    let hasList;
-    if (lists.length <= 0) {
-      hasList = (
-        <AddListCard
-          addList={this.addList}
-        />
-      );
-    } else {
-      hasList = (
-        <Lists
-          list={lists}
-          removeList={this.removeList}
-          editList={this.editList}
-        />
-      );
-    }
-
-    return (
-      <div className="app">
-        <div className="header-container ">
-          <Header addList={this.addList} />
-        </div>
-        <div className="lists-container">
-          {hasList}
-        </div>
-      </div>
+  let hasList;
+  if (lists.length <= 0) {
+    hasList = (
+      <AddListCard
+        addList={addList}
+      />
+    );
+  } else {
+    hasList = (
+      <Lists
+        list={lists}
+        removeList={removeList}
+        editList={editList}
+      />
     );
   }
-}
 
-export default App;
+  return (
+    <div className="app">
+      <div className="header-container ">
+        <Header addList={addList} />
+      </div>
+      <div className="lists-container">
+        {hasList}
+      </div>
+    </div>
+  );
+}
