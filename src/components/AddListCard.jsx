@@ -15,7 +15,7 @@ export default function AddListCard({ addList }) {
             Create a list
           </div>
 
-          <div className="icon">
+          <div className="add-list-icon">
             <AddIcon
               fill={color}
               onClick={() => {

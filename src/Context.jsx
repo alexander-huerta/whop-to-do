@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import './App.css';
-import Header from './components/Header.jsx';
-import Lists from './components/Lists.jsx';
+import React, { useContext, useState } from 'react';
 import AddListCard from './components/AddListCard.jsx';
-import AddListModal from './components/AddListModal.jsx';
+import Lists from './components/Lists.jsx';
 
-export default function App() {
-  const [lists, setLists] = useState(['test']);
+export default function Context({children}) {
+  const [lists, setLists] = useState();
   // eslint-disable-next-line no-unused-vars
   const [modalOpen, setModalStatus] = useState(false);
 
@@ -24,7 +21,6 @@ export default function App() {
     const listsAfterDeletion = lists.filter((list) => list !== listToUpdate);
     setLists({ lists: [...lists, listsAfterDeletion] });
   };
-
   let hasList;
   if (!lists) {
     hasList = (
@@ -41,19 +37,16 @@ export default function App() {
       />
     );
   }
-  if (modalOpen) {
-    return (
-      <AddListModal addList={addList} />
-    );
-  }
+
+
+
+
+
+  const value = { addList, removeList, editList };
+
   return (
-    <div className="app">
-      <div className="header-container ">
-        <Header addList={addList} />
-      </div>
-      <div className="lists-container">
-        {hasList}
-      </div>
-    </div>
+    <Context.Provier value={value}>
+      {children}
+    </Context.Provier>
   );
 }

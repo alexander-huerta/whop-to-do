@@ -10,7 +10,6 @@
   font-size: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(132, 155, 113);
 }
 
 /*#####~HEADER~~#####*/
@@ -21,14 +20,14 @@
   width: 100%;
 }
 .profile-pic {
-  margin: 32px 16px 24px 24px;
+  padding: 32px 16px 24px 24px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
 }
 .new-list-icon {
   margin-left:auto;
-  margin-right: 24px;
+  padding-right: 24px;
 }
  .title {
 }
@@ -53,13 +52,10 @@
 }
 .list-card-text, .add-list-card-text {
   padding-left: 16px;
-  padding-right: 16px;
 }
-.expand-icon {
+.expand-icon, .add-list-icon {
   padding-right: 16px;
-  padding-left: auto;
-  align-self: flex-end;
-  /* padding: 32px 16px 24px 24px;*/
+  padding-left: 16px;
 }
 
 /*#####~~ADD LIST MODAL~~#####*/
@@ -86,13 +82,11 @@
 }
 
 input {
-
   caret-color: #2FE6FF;
   border-width:0px;
   border:none;
   height: 26px;
   width: 100%;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
@@ -114,6 +108,8 @@ input:focus {outline:none!important;} */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   /* transform: translateY(8px); drops y axis*/
+  display: flex;
+
 }
 .edit-icon {
 }
@@ -123,14 +119,13 @@ input:focus {outline:none!important;} */
 
 @media only screen and (min-width: 1040px) {
   .app {
-    background-color: lightblue;
   }
   /*#####~HEADER~~#####*/
   .profile-pic {
-    margin-left: 40px;
+    padding-left: 40px;
   }
   .new-list-icon {
-    margin-right: 40px;
+    padding-right: 40px;
   }
   /* MODAL */
   .add-list-modal-container {
@@ -147,10 +142,10 @@ input:focus {outline:none!important;} */
     padding-right: 40px;
   }
   .list-card-container, .add-list-card-container {
-  margin: 0 40px 16px 40px;
+    margin: 0 40px 16px 40px;
   }
   .dropdown {
-  margin-right: 56px;
+    margin-right: 56px;
   }
 }
 
