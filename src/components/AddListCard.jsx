@@ -7,10 +7,13 @@ export default function AddListCard({ updateModal }) {
 
   return (
     <div className="add-list-card-container">
+
       <div className="add-list-card">
-        <div>
+
+        <div className="list-card-text">
           Create a list
         </div>
+
         <div className="add-list-icon">
           <AddIcon
             fill={color}
@@ -22,6 +25,7 @@ export default function AddListCard({ updateModal }) {
               setColor('#242424');
             }}
           />
+
         </div>
       </div>
     </div>

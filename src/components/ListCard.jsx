@@ -11,10 +11,13 @@ export default function ListCard({
 
   return (
     <div className="list-card-container">
+
       <div className="list-card">
-        <div>
+
+        <div className="list-card-text">
           {item}
         </div>
+
         <div className="expand-icon">
           <ExpandIcon
             fill={color}
@@ -30,6 +33,7 @@ export default function ListCard({
           />
         </div>
       </div>
+
       {open
         && (
         <DropDown

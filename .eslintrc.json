@@ -26,8 +26,8 @@
               "jsx": "always"
             }
           ],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts"] }],
         "react/jsx-props-no-spreading": "off",
-        "no-shadow": ["error", { "builtinGlobals": false, "hoist": "functions", "allow": [], "ignoreOnInitialization": false }]
+        "no-shadow": "off"
     }
 }

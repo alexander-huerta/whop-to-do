@@ -12,25 +12,31 @@ export default function DropDown({
 
   return (
     <div className="dropdown">
+
       <div className="edit">
         <EditIcon
           fill={editColor}
           onClick={() => {
             setEditColor('#2FE6FF');
+          }}
+          onMouseLeave={() => {
+            setEditColor('#242424');
             updateModal(item);
             removeList(item);
           }}
-          onMouseLeave={() => setEditColor('#242424')}
         />
       </div>
+
       <div className="delete">
         <DeleteIcon
           fill={deleteColor}
           onClick={() => {
             setDeleteColor('#FF3333');
+          }}
+          onMouseLeave={() => {
+            setDeleteColor('#242424');
             removeList(item);
           }}
-          onMouseLeave={() => setDeleteColor('#242424')}
         />
       </div>
     </div>
