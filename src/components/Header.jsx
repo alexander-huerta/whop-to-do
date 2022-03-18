@@ -14,7 +14,7 @@ export default function Header({ updateModal, addList }) {
         <img src={pic} alt="profile-pic" />
       </div>
 
-      <h3 className="title"> Lists</h3>
+      <h3> Lists</h3>
 
       <div className="new-list-icon">
         <NewListIcon

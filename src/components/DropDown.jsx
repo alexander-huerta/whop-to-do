@@ -12,7 +12,7 @@ export default function DropDown({
 
   return (
     <div className="dropdown">
-      <div className="edit-icon">
+      <div>
         <EditIcon
           fill={editColor}
           onClick={() => {
@@ -23,7 +23,7 @@ export default function DropDown({
           onMouseLeave={() => setEditColor('#242424')}
         />
       </div>
-      <div className="delete-icon">
+      <div>
         <DeleteIcon
           fill={deleteColor}
           onClick={() => {
