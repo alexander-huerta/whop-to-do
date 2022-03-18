@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import pic from '../icons/pic.png';
+// import pic from '../icons/pic.png';
+import ProfilePicIcon from '../icons/ProfilePicIcon.jsx';
+
 import NewListIcon from '../icons/NewListIcon.jsx';
 
 export default function Header({ updateModal, addList }) {
@@ -11,7 +13,8 @@ export default function Header({ updateModal, addList }) {
   return (
     <>
       <div className="profile-pic">
-        <img src={pic} alt="profile-pic" />
+        {/* <img src={pic} alt="profile-pic" /> */}
+        <ProfilePicIcon />
       </div>
 
       <h3> Lists</h3>

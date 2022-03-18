@@ -28,6 +28,7 @@
 .new-list-icon {
   margin-left:auto;
   padding-right: 24px;
+  transition-duration: 3s
 }
 
 /*#####~~LISTS~~#####*/
