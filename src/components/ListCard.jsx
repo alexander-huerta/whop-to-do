@@ -12,7 +12,7 @@ export default function ListCard({
   return (
     <div className="list-card-container">
       <div className="list-card">
-        <div className="list-card-text">
+        <div>
           {item}
         </div>
         <div className="expand-icon">

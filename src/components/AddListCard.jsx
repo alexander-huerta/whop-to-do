@@ -8,7 +8,7 @@ export default function AddListCard({ updateModal }) {
   return (
     <div className="add-list-card-container">
       <div className="add-list-card">
-        <div className="add-list-card-text">
+        <div>
           Create a list
         </div>
         <div className="add-list-icon">

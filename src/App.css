@@ -21,40 +21,34 @@
 }
 .profile-pic {
   padding: 32px 16px 24px 24px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
 }
 .new-list-icon {
   margin-left:auto;
   padding-right: 24px;
-  transition-duration: 3s
 }
 
 /*#####~~LISTS~~#####*/
 /*#####~~ADD LIST CARD~~#####*/
 .lists-container {
   position:relative;
+  margin: 0 24px;
 }
+
 .list-card-container, .add-list-card-container  {
+  padding: 0 16px 0 16px;
   height: 60px;
-  margin: 0 24px 16px 24px;
   border: 0.75px solid #ECECEC;
   border-radius: 8px;
   box-shadow: 0 2px 5px #ccc;
   position:inherit;
-  transition: 300ms ease-out;
 }
 .list-card, .add-list-card {
   display: flex;
   justify-content: space-between;
-  margin-top:10px;
-}
-.list-card-text, .add-list-card-text {
-  padding-left: 16px;
+  min-height: 100%;
+  align-items: center;
 }
 .expand-icon, .add-list-icon {
-  padding-right: 16px;
   padding-left: 16px;
 }
 
@@ -66,12 +60,8 @@
 .modal-buttons {
   display: flex;
   justify-content:space-between;
-}
-.cancel {
-  padding: 32px 0 24px 24px;
-}
-.done {
-  padding: 32px 24px 24px 0;
+  align-items: center;
+  padding: 32px 24px 24px 24px;
 }
 .modal-input{
   padding: 0 24px 24px 24px;
@@ -83,8 +73,6 @@ input {
   height: 26px;
   width: 100%;
   font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
 }
 input:focus {outline:none!important;}
 
@@ -99,9 +87,16 @@ input:focus {outline:none!important;}
   position:fixed;
   z-index:1;
   right:0;
-  padding: 16px;
   margin-right: 40px;
-  margin-top: 8px;
+  transform: translateY(-8px);
+}
+.edit {
+  text-align: center;
+  margin: 16px;
+}
+.delete {
+  text-align: center;
+  margin: 16px;
 }
 
 @media only screen and (min-width: 1040px) {
@@ -111,40 +106,26 @@ input:focus {outline:none!important;}
   .new-list-icon {
     padding-right: 40px;
   }
-  .cancel {
-    padding-left: 40px;
+  .modal-buttons, .modal-input{
+    padding: 0 40px;
   }
-  .done {
-    padding-left: 40px;
-  }
-  .modal-input{
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  .list-card-container, .add-list-card-container {
-    margin: 0 40px 16px 40px;
-  }
+  .lists-container {
+  margin: 0 40px;
+}
   .dropdown {
     margin-right: 56px;
   }
 }
 
 @media only screen and (min-width: 1727px) {
-  .list-card-container, .add-list-card-container {
-    margin: 0 384px 16px 384px;
+  .lists-container {
+    margin: 0 384px;
+  }
+  .modal-buttons, .modal-input{
+    padding: 0 384px;
   }
   .dropdown {
     margin-right: 400px;
-  }
-  .cancel {
-    padding-left: 384px;
-  }
-  .done {
-    padding-right: 384px;
-  }
-  .modal-input{
-    padding-left: 384px;
-    padding-right: 384px;
   }
 }
 
