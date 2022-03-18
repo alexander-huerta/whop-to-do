@@ -1,34 +1,26 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import pic from '../icons/pic.png';
 import NewListIcon from '../icons/NewListIcon.jsx';
-import AddListModal from './AddListModal.jsx';
 
-export default function Header({ addList }) {
+export default function Header({ updateModal, addList }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState('#242424');
 
-  if (open) {
-    return (
-      <AddListModal addList={addList} />
-    );
-  }
   return (
     <>
-      {/* {open && <AddListModal addList={addList}/>} */}
-      {/* <div className ="header"> */}
-
       <div className="profile-pic">
         <img src={pic} alt="profile-pic" />
       </div>
 
-      <h3 className="title"> Lists</h3>
+      <h3> Lists</h3>
 
       <div className="new-list-icon">
         <NewListIcon
           fill={color}
           onClick={() => {
-            setOpen(!open);
+            updateModal();
             setColor('#2FE6FF');
           }}
           onMouseLeave={() => {
@@ -36,15 +28,11 @@ export default function Header({ addList }) {
           }}
         />
       </div>
-
-      {/* {open && <AddListModal addList={addList} />} */}
-
-      {/* </div> */}
     </>
   );
 }
 
 Header.propTypes = {
   addList: PropTypes.func.isRequired,
-
+  updateModal: PropTypes.func.isRequired,
 };

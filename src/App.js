@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header.jsx';
@@ -6,17 +8,14 @@ import AddListCard from './components/AddListCard.jsx';
 import AddListModal from './components/AddListModal.jsx';
 
 export default function App() {
-  const [lists, setLists] = useState();
-  // eslint-disable-next-line no-unused-vars
+  const [lists, setLists] = useState([]);
   const [modalOpen, setModalStatus] = useState(false);
-
+  const [inputString, setInputValue] = useState();
   const addList = (listToAdd) => {
-    // eslint-disable-next-line no-shadow
     if (listToAdd !== '') setLists((lists) => [...lists, listToAdd]);
   };
 
   const removeList = (listToDelete) => {
-    // eslint-disable-next-line no-shadow
     setLists((lists) => lists.filter((list) => list !== listToDelete));
   };
 
@@ -25,11 +24,17 @@ export default function App() {
     setLists({ lists: [...lists, listsAfterDeletion] });
   };
 
+  const updateModal = (val) => {
+    if (val) setInputValue(val);
+    setModalStatus(!modalOpen);
+  };
+
   let hasList;
-  if (!lists) {
+  if (lists.length <= 0) {
     hasList = (
       <AddListCard
         addList={addList}
+        updateModal={updateModal}
       />
     );
   } else {
@@ -38,18 +43,26 @@ export default function App() {
         list={lists}
         removeList={removeList}
         editList={editList}
+        updateModal={updateModal}
       />
     );
   }
   if (modalOpen) {
     return (
-      <AddListModal addList={addList} />
+      <AddListModal
+        addList={addList}
+        updateModal={updateModal}
+        item={inputString}
+      />
     );
   }
   return (
     <div className="app">
       <div className="header-container ">
-        <Header addList={addList} />
+        <Header
+          addList={addList}
+          updateModal={updateModal}
+        />
       </div>
       <div className="lists-container">
         {hasList}

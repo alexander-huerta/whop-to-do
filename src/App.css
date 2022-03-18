@@ -10,7 +10,6 @@
   font-size: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(132, 155, 113);
 }
 
 /*#####~HEADER~~#####*/
@@ -21,19 +20,18 @@
   width: 100%;
 }
 .profile-pic {
-  margin: 32px 16px 24px 24px;
+  padding: 32px 16px 24px 24px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
 }
 .new-list-icon {
   margin-left:auto;
-  margin-right: 24px;
-}
- .title {
+  padding-right: 24px;
 }
 
-/*#####~~LISTS / ADD LIST CARD~~#####*/
+/*#####~~LISTS~~#####*/
+/*#####~~ADD LIST CARD~~#####*/
 .lists-container {
   position:relative;
 }
@@ -53,25 +51,18 @@
 }
 .list-card-text, .add-list-card-text {
   padding-left: 16px;
-  padding-right: 16px;
 }
-.expand-icon {
+.expand-icon, .add-list-icon {
   padding-right: 16px;
-  padding-left: auto;
-  align-self: flex-end;
-  /* padding: 32px 16px 24px 24px;*/
+  padding-left: 16px;
 }
 
 /*#####~~ADD LIST MODAL~~#####*/
 .add-list-modal-container {
-  /* display: flex;
-  align-items:center; */
-  background-color: rgb(170, 246, 182);
-  /* height: 88px; */
+  height: 88px;
   width: 100%;
 }
 .modal-buttons {
-  background-color: rgb(174, 152, 189);
   display: flex;
   justify-content:space-between;
 }
@@ -84,57 +75,40 @@
 .modal-input{
   padding: 0 24px 24px 24px;
 }
-
 input {
-
   caret-color: #2FE6FF;
   border-width:0px;
   border:none;
   height: 26px;
   width: 100%;
-
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
 }
-input:focus {outline:none!important;} */
+input:focus {outline:none!important;}
 
 /* #####~~DROP DOWN~~##### */
 .dropdown {
   height: 123;
   width: 116;
-  position:fixed;
-  right:0;
-  z-index:1;
-  padding: 16px;
-  margin-right: 40px;
-  margin-top: 8px;
   border: 1px solid #ECECEC;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  /* transform: translateY(8px); drops y axis*/
-}
-.edit-icon {
-}
-.delete-icon {
-
+  position:fixed;
+  z-index:1;
+  right:0;
+  padding: 16px;
+  margin-right: 40px;
+  margin-top: 8px;
 }
 
 @media only screen and (min-width: 1040px) {
-  .app {
-    background-color: lightblue;
-  }
-  /*#####~HEADER~~#####*/
   .profile-pic {
-    margin-left: 40px;
+    padding-left: 40px;
   }
   .new-list-icon {
-    margin-right: 40px;
-  }
-  /* MODAL */
-  .add-list-modal-container {
-    background-color: lightblue;
+    padding-right: 40px;
   }
   .cancel {
     padding-left: 40px;
@@ -147,25 +121,19 @@ input:focus {outline:none!important;} */
     padding-right: 40px;
   }
   .list-card-container, .add-list-card-container {
-  margin: 0 40px 16px 40px;
+    margin: 0 40px 16px 40px;
   }
   .dropdown {
-  margin-right: 56px;
+    margin-right: 56px;
   }
 }
 
 @media only screen and (min-width: 1727px) {
-  .app {
-    background-color: rgb(216, 44, 44);
-  }
   .list-card-container, .add-list-card-container {
     margin: 0 384px 16px 384px;
   }
   .dropdown {
     margin-right: 400px;
-  }
-  .add-list-modal-container {
-    background-color: rgb(240, 114, 208);
   }
   .cancel {
     padding-left: 384px;
