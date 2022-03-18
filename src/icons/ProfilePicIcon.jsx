@@ -1,16 +1,18 @@
 import React from 'react';
 
-export default function ProfilePicIcon() {
+export default function ProfilePicIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width="60"
+      width="40"
       height="40"
-      viewBox="0 0 60 40"
+      viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      throwIfNamespace="false"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      {...props}
     >
       <rect
+        x="-10"
         width="60"
         height="40"
         fill="url(#pattern0)"
