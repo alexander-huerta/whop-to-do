@@ -9,10 +9,10 @@ export default function AddListModal({ updateModal, addList, item }) {
   const [doneColor, setDoneColor] = useState('#505050');
 
   return (
-    <div
-      className="add-list-modal-container"
-    >
+    <div className="add-list-modal-container">
+
       <div className="modal-buttons">
+
         <div className="cancel">
           <CancelIcon
             fill={cancelColor}
@@ -37,8 +37,8 @@ export default function AddListModal({ updateModal, addList, item }) {
             onMouseOver={() => setDoneColor('#242424')}
           />
         </div>
-
       </div>
+
       <form className="modal-input">
         <input
           type="text"
@@ -49,6 +49,7 @@ export default function AddListModal({ updateModal, addList, item }) {
           }}
         />
       </form>
+
     </div>
   );
 }

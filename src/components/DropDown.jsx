@@ -9,28 +9,42 @@ export default function DropDown({
 }) {
   const [editColor, setEditColor] = useState('#242424');
   const [deleteColor, setDeleteColor] = useState('#242424');
+  const [editListClicked, setEditClicked] = useState(false);
+  const [deleteListClicked, setDeleteClicked] = useState(false);
 
   return (
     <div className="dropdown">
-      <div>
+
+      <div className="edit">
         <EditIcon
           fill={editColor}
           onClick={() => {
             setEditColor('#2FE6FF');
-            updateModal(item);
-            removeList(item);
+            setEditClicked(true);
           }}
-          onMouseLeave={() => setEditColor('#242424')}
+          onMouseLeave={() => {
+            setEditColor('#242424');
+            if (editListClicked) {
+              updateModal(item);
+              removeList(item);
+            }
+          }}
         />
       </div>
-      <div>
+
+      <div className="delete">
         <DeleteIcon
           fill={deleteColor}
           onClick={() => {
+            setDeleteClicked(true);
             setDeleteColor('#FF3333');
-            removeList(item);
           }}
-          onMouseLeave={() => setDeleteColor('#242424')}
+          onMouseLeave={() => {
+            setDeleteColor('#242424');
+            if (deleteListClicked) {
+              removeList(item);
+            }
+          }}
         />
       </div>
     </div>
