@@ -25,14 +25,6 @@
   padding: 32px 16px 24px 24px;
 }
 
-.profile-pic-alt {
-  padding: 32px 16px 24px 24px;
-}
-
-img {
-border-radius:50%;
-}
-
 .new-list-icon {
   padding-right: 24px;
   margin-left: auto;
@@ -128,14 +120,12 @@ input:focus {outline:none!important;}
   .profile-pic {
     padding-left: 40px;
   }
-  .profile-pic-alt {
-    padding-left: 40px;
-  }
   .new-list-icon {
     padding-right: 40px;
   }
   .lists-container {
-  margin-right: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
   }
   .modal-buttons, .modal-input{
     padding-right: 40px;

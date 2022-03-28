@@ -9,6 +9,8 @@ export default function DropDown({
 }) {
   const [editColor, setEditColor] = useState('#242424');
   const [deleteColor, setDeleteColor] = useState('#242424');
+  const [editListClicked, setEditClicked] = useState(false);
+  const [deleteListClicked, setDeleteClicked] = useState(false);
 
   return (
     <div className="dropdown">
@@ -18,11 +20,14 @@ export default function DropDown({
           fill={editColor}
           onClick={() => {
             setEditColor('#2FE6FF');
+            setEditClicked(true);
           }}
           onMouseLeave={() => {
             setEditColor('#242424');
-            updateModal(item);
-            removeList(item);
+            if (editListClicked) {
+              updateModal(item);
+              removeList(item);
+            }
           }}
         />
       </div>
@@ -31,11 +36,14 @@ export default function DropDown({
         <DeleteIcon
           fill={deleteColor}
           onClick={() => {
+            setDeleteClicked(true);
             setDeleteColor('#FF3333');
           }}
           onMouseLeave={() => {
             setDeleteColor('#242424');
-            removeList(item);
+            if (deleteListClicked) {
+              removeList(item);
+            }
           }}
         />
       </div>
