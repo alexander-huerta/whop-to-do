@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ProfilePicIcon from '../icons/ProfilePicIcon.jsx';
 import NewListIcon from '../icons/NewListIcon.jsx';
+import profilePic from '../icons/gary.png';
 
 export default function Header({ updateModal }) {
   const [color, setColor] = useState('#242424');
 
   return (
     <>
-      <div className="profile-pic">
-        <ProfilePicIcon />
+      <div className="profile-pic-alt">
+        <img src={profilePic} alt="Profile Pic" />
       </div>
 
       <h3 className="title"> Lists </h3>

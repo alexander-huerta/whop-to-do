@@ -25,6 +25,14 @@
   padding: 32px 16px 24px 24px;
 }
 
+.profile-pic-alt {
+  padding: 32px 16px 24px 24px;
+}
+
+img {
+border-radius:50%;
+}
+
 .new-list-icon {
   padding-right: 24px;
   margin-left: auto;
@@ -118,6 +126,9 @@ input:focus {outline:none!important;}
 /* #####~~MEDIA QUERIES~~##### */
 @media only screen and (min-width: 1040px) {
   .profile-pic {
+    padding-left: 40px;
+  }
+  .profile-pic-alt {
     padding-left: 40px;
   }
   .new-list-icon {
