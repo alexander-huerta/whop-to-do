@@ -7,9 +7,7 @@ import AddListModal from './components/AddListModal.jsx';
 
 export default function App() {
   const [lists, setLists] = useState([]);
-
   const [modalOpen, setModalStatus] = useState(false);
-
   const [inputString, setInputValue] = useState();
 
   const addList = (listToAdd) => {
