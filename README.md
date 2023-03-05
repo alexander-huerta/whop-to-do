@@ -1,5 +1,5 @@
 # To-Do List
-##Pixel perfect SPA built with React, based off of a provided figma design.  
+## Pixel perfect SPA built with React, based off of a provided figma design.  
 
 ## To get started:
 
